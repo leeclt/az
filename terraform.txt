@@ -16,3 +16,5 @@ if ($connectTestResult.TcpTestSucceeded) {
 } else {
     Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
 }
+
+https://teams.microsoft.com/_#/files/GIS%20Conflation?threadId=19:882546c5c01c4fabb3fbeeea76bf5f6a@thread.tacv2&ctx=channel
