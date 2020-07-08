@@ -3,3 +3,16 @@ b__tenant_ids = 179d26d3-3e59-4051-9377-05d3820e617c
 c__application_id = a43922da-99aa-4bc1-bc4d-05d14034872e
 d__application_key = yQ%qso7esINTDJdkDmZf
 e__service_principal_object_id = f9f7883b-9c72-4103-904e-a664e60c7297
+
+
+
+
+$connectTestResult = Test-NetConnection -ComputerName euazstgakm1001.privatelink.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded) {
+    # Save the password so the drive will persist on reboot
+    cmd.exe /C "cmdkey /add:`"euazstgakm1001.privatelink.file.core.windows.net`" /user:`"Azure\euazstgakm1001`" /pass:`"xkXxawqZ34RzN9Muo80NgZiD3IShNaqULwHFxfqJG72qTCbatiGIXYqtYMLJPMlHXNSNrHZWpGF+LBW1rpNx5w==`""
+    # Mount the drive
+    New-PSDrive -Name Z -PSProvider FileSystem -Root "\\euazstgakm1001.privatelink.file.core.windows.net\azfiles" -Persist
+} else {
+    Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
