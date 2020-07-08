@@ -1,0 +1,5 @@
+a__subscription_ids = ca65b24d-06d8-468f-b23f-88a61e735aa5
+b__tenant_ids = 179d26d3-3e59-4051-9377-05d3820e617c
+c__application_id = a43922da-99aa-4bc1-bc4d-05d14034872e
+d__application_key = yQ%qso7esINTDJdkDmZf
+e__service_principal_object_id = f9f7883b-9c72-4103-904e-a664e60c7297
